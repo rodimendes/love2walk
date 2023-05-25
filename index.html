@@ -10,77 +10,79 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,900;1,100&display=swap"
     rel="stylesheet">
-  <title>Mapping Sidewalks</title>
+  <title>Love2Walk</title>
 </head>
 
 <body>
   <header class="header">
-    <h1>love2walk - Braga</h1>
-
+    <h1>love2walk</h1>
   </header>
+
   <section class="container">
     <article class="content">
-      <form action="">
-
-        <label class="title">Type of obstacle:</label>
-        <select name="obstacle" id="" class="select-options">
-          <option selected value="">-- Select --</option>
-          <option value="on-pavement">On Pavement</option>
-          <option value="mobile-barrier">Mobile Barrier</option>
-          <option value="construction">Construction</option>
-          <option value="vehicle">Vehicle</option>
-        </select>
-
-        <label class="title">Gravity level:</label>
-        <select name="gravity" id="" class="select-options">
-          <option selected value="">-- Select --</option>
-          <option value="low">Low</option>
-          <option value="medium">Medium</option>
-          <option value="high">High</option>
-        </select>
-        <br>
+      <form>
+        <div>
+          <label class="title">Type of obstacle:</label>
+          <select name="obstacle" id="" class="select-options">
+            <option selected value="">-- Select --</option>
+            <option value="on-pavement">On Pavement</option>
+            <option value="mobile-barrier">Mobile Barrier</option>
+            <option value="construction">Construction</option>
+            <option value="vehicle">Vehicle</option>
+          </select>
+        </div>
+        <div>
+          <label class="title">Gravity level:</label>
+          <select name="gravity" id="" class="select-options">
+            <option selected value="">-- Select --</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
         <div class="quick-intervention">
           <label for="quick">Quick intervention
             <input type="checkbox" name="quick-intervention" value="True" id="quick">
           </label>
         </div>
-
-        <br>
-        <p id="demo" name="coord"></p>
-        <input type="file" accept="image/*" class="get-image">
-        <br>
-        <button>Send</button>
-
+        <div>
+          <p id="demo" name="coord"></p>
+        </div>
+        <div>
+          <input type="file" accept="image/*" class="get-image">
+        </div>
+        <div>
+          <button>Send</button>
+        </div>
       </form>
+      <button onclick="getLocation()">Try It</button>
       <p>Click the button to get your coordinates.</p>
 
-      <button onclick="getLocation()">Try It</button>
-
-      <script>
-        var x = document.getElementById("demo");
-
-        function getLocation() {
-          if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-          } else {
-            x.innerHTML = "Geolocation is not supported by this browser.";
-          }
-        }
-
-        function showPosition(position) {
-          x.innerHTML = "Latitude: " + position.coords.latitude +
-            "<br>Longitude: " + position.coords.longitude;
-        }
-      </script>
 
     </article>
   </section>
 
   <footer class='footer'>
     <p>Made with ❤️ and 😊 in 🇵🇹 by MenDesign</p>
-    <p>{{ current_year }}</p>
+    <p class="currentYear"></p>
   </footer>
 
+  <script src="scripts/script.js">
+    var x = document.getElementById("demo");
+
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+
+    function showPosition(position) {
+      x.innerHTML = "Latitude: " + position.coords.latitude +
+        "<br>Longitude: " + position.coords.longitude;
+    }
+  </script>
 </body>
 
 </html>
