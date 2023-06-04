@@ -15,14 +15,16 @@
 
 <body>
 
+  <header class="braga-logo"></header>
   <header class="header">
     <h1>love2walk</h1>
+    <p>Sabe bem caminhar em <span class="slogan">Braga</span></p>
   </header>
 
   <section class="container">
     <article class="content">
       <form>
-        <div>
+        <div class="question">
           <label class="title">Type of obstacle:</label>
           <select name="obstacle" id="" class="select-options">
             <option selected value="">-- Select --</option>
@@ -32,7 +34,7 @@
             <option value="vehicle">Vehicle</option>
           </select>
         </div>
-        <div>
+        <div class="question">
           <label class="title">Gravity level:</label>
           <select name="gravity" id="" class="select-options">
             <option selected value="">-- Select --</option>
@@ -41,20 +43,20 @@
             <option value="high">High</option>
           </select>
         </div>
-        <div class="quick-intervention">
+        <div class="question quick-intervention">
           <label for="quick">Quick intervention
             <input type="checkbox" name="quick-intervention" value="True" id="quick">
           </label>
         </div>
-        <div>
-          <label class="title">Take a picture
+        <div class="question">
+          <label class="title">Take a picture</label>
             <input type="file" accept="image/*" class="get-image">
-          </label>
+
         </div>
         <div>
           <p id="demo" name="coord"></p>
         </div>
-        <div>
+        <div class="question">
           <button>Send</button>
         </div>
       </form>

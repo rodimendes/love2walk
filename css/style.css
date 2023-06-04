@@ -21,20 +21,45 @@ input {
 
 .header {
   background-color: #052C49;
-  padding: 20% 0;
+  padding: 12% 0;
   top: 0;
   width: 100vw;
   border-radius: 0 0 10px 10px;
   text-align: center;
 }
+.header p {
+  display: block;
+  text-transform: lowercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  font-weight: 400;
+}
+.header p span {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.braga-logo {
+  height: 47px;
+  background-image: url(../braga-cidade-aut.jpeg);
+  background-size: contain;
+  top: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+}
 
 .container {
+  height: 100;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   text-align: center;
   background-color: #00A9E4;
+}
+.container .question {
+  display: block;
+  margin: 20px 0 0 0;
 }
 .container .title {
   display: block;
@@ -44,14 +69,15 @@ input {
 }
 .container .select-options {
   width: 140px;
+  margin-bottom: 10px;
 }
 .container .quick-intervention {
   font-size: 12px;
   font-weight: 500;
+  margin: 0;
 }
 .container .get-image {
-  width: -moz-fit-content;
-  width: fit-content;
+  width: auto;
   height: -moz-fit-content;
   height: fit-content;
 }
