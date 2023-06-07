@@ -15,63 +15,64 @@
 
 <body>
 
-  <header class="braga-logo"></header>
-  <header class="header">
-    <h1>love2walk</h1>
-    <p>Sabe bem caminhar em <span class="slogan">Braga</span></p>
-  </header>
+  <div class="external-box">
+    <header class="braga-logo"></header>
+    <header class="header">
+      <h1>love2walk</h1>
+      <p>Sabe bem caminhar em <span class="slogan">Braga</span></p>
+    </header>
 
-  <section class="container">
-    <article class="content">
-      <form>
-        <div class="question">
-          <label class="title">Type of obstacle:</label>
-          <select name="obstacle" id="" class="select-options">
-            <option selected value="">-- Select --</option>
-            <option value="on-pavement">On Pavement</option>
-            <option value="mobile-barrier">Mobile Barrier</option>
-            <option value="construction">Construction</option>
-            <option value="vehicle">Vehicle</option>
-          </select>
-        </div>
-        <div class="question">
-          <label class="title">Gravity level:</label>
-          <select name="gravity" id="" class="select-options">
-            <option selected value="">-- Select --</option>
-            <option value="low">Low</option>
-            <option value="medium">Medium</option>
-            <option value="high">High</option>
-          </select>
-        </div>
-        <div class="question quick-intervention">
-          <label for="quick">Quick intervention
-            <input type="checkbox" name="quick-intervention" value="True" id="quick">
-          </label>
-        </div>
-        <div class="question">
-          <label class="title">Take a picture</label>
+    <section class="container">
+      <article class="content">
+        <form>
+          <div class="question">
+            <label class="title">Type of obstacle:</label>
+            <select name="obstacle" id="" class="select-options">
+              <option selected value="">-- Select --</option>
+              <option value="on-pavement">On Pavement</option>
+              <option value="mobile-barrier">Mobile Barrier</option>
+              <option value="construction">Construction</option>
+              <option value="vehicle">Vehicle</option>
+            </select>
+          </div>
+          <div class="question">
+            <label class="title">Gravity level:</label>
+            <select name="gravity" id="" class="select-options">
+              <option selected value="">-- Select --</option>
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+          <div class="question quick-intervention">
+            <label for="quick">Quick intervention
+              <input type="checkbox" name="quick-intervention" value="True" id="quick">
+            </label>
+          </div>
+          <div class="question">
+            <label class="title">Take a picture</label>
             <input type="file" accept="image/*" class="get-image">
 
-        </div>
-        <div>
-          <p id="demo" name="coord"></p>
-        </div>
-        <div class="question">
-          <button>Send</button>
-        </div>
-      </form>
-      <button onclick="getLocation()">Try It</button>
-      <p>Click the button to get your coordinates.</p>
+          </div>
+          <div>
+            <p id="demo" name="coord"></p>
+          </div>
+          <div class="question">
+            <button>Send</button>
+          </div>
+        </form>
+        <button onclick="getLocation()">Try It</button>
+        <p>Click the button to get your coordinates.</p>
 
 
-    </article>
-  </section>
+      </article>
+    </section>
 
-  <footer class='footer'>
-    <p>Made with ❤️ and 😊 in 🇵🇹 by MenDesign</p>
-    <p class="currentYear"></p>
-  </footer>
-
+    <footer class='footer'>
+      <p>Made with ❤️ and 😊 in 🇵🇹 by MenDesign</p>
+      <p class="currentYear"></p>
+    </footer>
+  </div>
   <script src="scripts/script.js">
 
   </script>

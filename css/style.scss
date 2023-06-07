@@ -8,6 +8,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
   color: aliceblue;
+  height: 100vh;
 }
 
 input {
@@ -19,27 +20,37 @@ input {
   position: relative;
 }
 
-.header {
-  background-color: #052C49;
-  padding: 12% 0;
-  top: 0;
-  width: 100vw;
-  border-radius: 0 0 10px 10px;
-  text-align: center;
+.external-box {
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
 
-  p {
-    display: block;
-    text-transform: lowercase;
-    letter-spacing: 2px;
-    font-size: 12px;
-    font-weight: 400;
+  .header {
+    flex-grow: 0;
+    flex-basis: auto;
+    background-color: #052C49;
+    padding: 12% 0;
+    top: 0;
+    width: 320px;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
 
-    span {
-      text-transform: uppercase;
-      font-weight: bold;
+    p {
+      display: block;
+      text-transform: lowercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 400;
+
+      span {
+        text-transform: uppercase;
+        font-weight: bold;
+      }
     }
   }
 }
+
+
 
 .braga-logo {
   height: 47px;
@@ -51,13 +62,14 @@ input {
  }
 
 .container {
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
+  width: 320px;
+  // display: flex;
+  flex-grow: 1;
+  flex-basis: auto;
   justify-content: center;
-  align-items: center;
   text-align: center;
   background-color: #00A9E4;
+  border-radius: 10px;
 
   .question {
     display: block;
@@ -90,16 +102,15 @@ input {
 
 .footer {
   background-color: #446CAA;
-  position: fixed;
-  bottom: 0;
-  width: 100vw;
-  height: 7vh;
+  flex-grow: 0;
+  flex-basis: 40px;
+  width: 320px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   font-family: 'Nunito', sans-serif;
   font-weight: 100;
-  font-size: 80%;
+  font-size: 10px;
   border-radius: 10px 10px 0 0;
 }
