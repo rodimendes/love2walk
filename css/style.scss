@@ -51,7 +51,6 @@ input {
 }
 
 
-
 .braga-logo {
   height: 47px;
   background-image: url(../braga-cidade-aut.jpeg);
@@ -74,6 +73,15 @@ input {
   .question {
     display: block;
     margin: 20px 0 0 0;
+
+    button {
+      background-color: #446CAA;
+      color: aliceblue;
+      padding: 5px 15px;
+      border-radius: 3px;
+      border: none;
+
+    }
   }
 
   .title {
@@ -86,6 +94,9 @@ input {
   .select-options {
     width: 140px;
     margin-bottom: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 2px;
   }
 
   .quick-intervention {

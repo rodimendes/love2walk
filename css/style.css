@@ -69,6 +69,13 @@ input {
   display: block;
   margin: 20px 0 0 0;
 }
+.container .question button {
+  background-color: #446CAA;
+  color: aliceblue;
+  padding: 5px 15px;
+  border-radius: 3px;
+  border: none;
+}
 .container .title {
   display: block;
   font-family: "Roboto";
@@ -78,6 +85,9 @@ input {
 .container .select-options {
   width: 140px;
   margin-bottom: 10px;
+  padding: 5px;
+  border: none;
+  border-radius: 2px;
 }
 .container .quick-intervention {
   font-size: 12px;
