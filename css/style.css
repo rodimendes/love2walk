@@ -120,9 +120,9 @@ input {
   color: white;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 450px) {
   body {
-    width: 400px;
+    width: 450px;
     margin: 0 auto;
   }
 }/*# sourceMappingURL=style.css.map */
