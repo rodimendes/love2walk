@@ -118,4 +118,11 @@ input {
   font-size: 5px;
   text-decoration: none;
   color: white;
+}
+
+@media (min-width: 400px) {
+  body {
+    width: 400px;
+    margin: 0 auto;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -131,3 +131,10 @@ input {
     color: white;
   }
 }
+
+@media (min-width: 400px) {
+  body {
+    width: 400px;
+    margin: 0 auto;
+  }
+}
