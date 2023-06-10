@@ -75,6 +75,7 @@ input {
   padding: 5px 15px;
   border-radius: 3px;
   border: none;
+  box-shadow: 1px 1px 5px black;
 }
 .container .title {
   display: block;
@@ -88,6 +89,7 @@ input {
   padding: 5px;
   border: none;
   border-radius: 2px;
+  box-shadow: 1px 1px 5px black;
 }
 .container .quick-intervention {
   font-size: 12px;
@@ -125,4 +127,4 @@ input {
     width: 600px;
     margin: 0 auto;
   }
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=main.css.map */

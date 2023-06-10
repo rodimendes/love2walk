@@ -1,24 +1,5 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 100;
-  color: aliceblue;
-  height: 100vh;
-}
-
-input {
-  width: 15px;
-  height: 15px;
-  padding: 0;
-  margin: 0;
-  vertical-align: top;
-  position: relative;
-}
+@import 'base';
+@import 'variables';
 
 .external-box {
   display: flex;
@@ -28,7 +9,7 @@ input {
   .header {
     flex-grow: 0;
     flex-basis: auto;
-    background-color: #052C49;
+    background-color: $background-color-primary;
     padding: 12% 0;
     top: 0;
     width: auto;
@@ -67,7 +48,7 @@ input {
   flex-basis: auto;
   justify-content: center;
   text-align: center;
-  background-color: #00A9E4;
+  background-color: $background-color-secondary;
   border-radius: 10px;
 
   .question {
@@ -75,12 +56,12 @@ input {
     margin: 20px 0 0 0;
 
     button {
-      background-color: #446CAA;
+      background-color: $background-color-terciary;
       color: aliceblue;
       padding: 5px 15px;
       border-radius: 3px;
       border: none;
-
+      box-shadow: $box-shadow
     }
   }
 
@@ -97,6 +78,7 @@ input {
     padding: 5px;
     border: none;
     border-radius: 2px;
+    box-shadow: $box-shadow
   }
 
   .quick-intervention {
@@ -112,7 +94,7 @@ input {
 }
 
 .footer {
-  background-color: #446CAA;
+  background-color: $background-color-terciary;
   flex-grow: 0;
   flex-basis: 40px;
   width: auto;
