@@ -28,7 +28,7 @@
           <form>
             <div class="question">
               <label class="title">Type of obstacle:</label>
-              <select name="obstacle" id="1" class="select-options">
+              <select name="obstacle" id="typeObstacle" class="select-options">
                 <option selected value="">-- Select --</option>
                 <option value="on-pavement">On Pavement</option>
                 <option value="mobile-barrier">Mobile Barrier</option>
@@ -38,7 +38,7 @@
             </div>
             <div class="question">
               <label class="title">Gravity level:</label>
-              <select name="gravity" id="" class="select-options">
+              <select name="gravity" id="gravityLevel" class="select-options">
                 <option selected value="">-- Select --</option>
                 <option value="low">Low</option>
                 <option value="medium">Medium</option>
@@ -47,14 +47,11 @@
             </div>
             <div class="question quick-intervention">
               <label for="quick"
-                >Quick intervention
-                <input
+                >Quick intervention<input
                   type="checkbox"
                   name="quick-intervention"
-                  value="True"
-                  id="quick"
-                />
-              </label>
+                  id="quickIntervention"
+              /></label>
             </div>
             <div class="question">
               <label class="title">Take or browse a picture</label>
@@ -67,7 +64,7 @@
               <p id="demo" name="coord"></p>
             </div>
             <div class="question">
-              <button>Send</button>
+              <button type="button" id="submitButton">Send</button>
             </div>
           </form>
         </article>
