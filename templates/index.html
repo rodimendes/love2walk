@@ -1,0 +1,62 @@
+{% include "header.html" %}
+
+      <section class="container">
+        <article class="content">
+          <form action="/sendData" method="post" id="userForm">
+            <div class="question">
+              <label class="title">Type of issue:</label>
+              <select
+                name="issue"
+                id="typeIssue"
+                class="select-options"
+                required
+              >
+                <option selected value="">-- Select --</option>
+                <option value="On Pavement">On Pavement</option>
+                <option value="Mobile Barrier">Mobile Barrier</option>
+                <option value="Construction">Construction</option>
+                <option value="Vehicle">Vehicle</option>
+                <option value="Lighting">Lighting</option>
+              </select>
+            </div>
+            <div class="question">
+              <label class="title">Gravity level:</label>
+              <select
+                name="gravity"
+                id="gravityLevel"
+                class="select-options"
+                required
+              >
+                <option selected value="">-- Select --</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+              </select>
+            </div>
+            <div class="question quick-intervention">
+              <label for="quick"
+                >Quick intervention<input
+                  type="checkbox"
+                  name="quick-intervention"
+                  id="quickIntervention"
+              /></label>
+            </div>
+            <div class="question">
+              <label class="title">Take or browse a picture:</label>
+              <input type="file" accept="image/*" class="get-image" />
+            </div>
+            <div class="question">
+              <label class="title">If you are at the place, click here:</label>
+              <button id="geoCoordsBtn">Send with coordinates</button>
+              <!-- <p id="coordsDisplay"></p> -->
+            </div>
+            <div class="question">
+              <button type="submit" id="submitButton">
+                Send without coordinates
+              </button>
+            </div>
+          </form>
+        </article>
+      </section>
+
+{% include "footer.html" %}
