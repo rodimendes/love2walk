@@ -15,14 +15,6 @@ function getLocation(callback) {
   if ("geolocation" in navigator) {
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        // let lat = position.coords.latitude;
-        // let lon = position.coords.longitude;
-        // let accuracy = position.coords.accuracy;
-
-        // console.log("Latitude:", lat);
-        // console.log("Longitude:", lon);
-        // console.log("Precisão (em metros):", accuracy);
-
         if (callback) {
           callback(position); // Pass position to callback
         }
@@ -37,38 +29,27 @@ function getLocation(callback) {
   }
 }
 
-function showPosition(position) {
-  let latitude = position.coords.latitude;
-  let longitude = position.coords.longitude;
-
-  sendCoordinatesToServer(latitude, longitude);
-
-  let coordinates = { latitude, longitude };
-
-  // x.innerHTML = "Latitude: " + latitude + "<br>Longitude: " + longitude;
-  return coordinates;
-}
-
-function sendCoordinatesToServer(lat, lng) {
-  // console.log("Sending coordinates:", lat, lng);
-}
-
-// HOW THE FOLLOWING FUNCTION WORKS?
+let obstacle;
+let gravity;
+let quickIntervention;
 
 document.getElementById("submitButton").addEventListener("click", function () {
-  const obstacle = document.getElementById("typeObstacle").value;
-  const gravity = document.getElementById("gravityLevel").value;
-  const quickIntervention =
-    document.getElementById("quickIntervention").checked;
+  obstacle = document.getElementById("typeObstacle").value;
+  gravity = document.getElementById("gravityLevel").value;
+  quickIntervention = document.getElementById("quickIntervention").checked;
 
   getLocation((position) => {
-    let coordinates = showPosition(position); // Pass position to showPosition
-
-    console.log("Type of obstacle: ", obstacle);
-    console.log("Gravity level: ", gravity);
-    console.log("Quick intervention: ", quickIntervention);
-    console.log("Coordinates: ", coordinates.latitude, coordinates.longitude);
+    let occurrence = {
+      obstacleType: obstacle,
+      gravityLevel: gravity,
+      quickInterventionNeeded: quickIntervention,
+      coordLatitude: position.coords.latitude,
+      coordLongitude: position.coords.longitude,
+      coordinatesAccuracy: position.coords.accuracy,
+    };
+    let occurrenceJSON = JSON.stringify(occurrence);
+    console.log(occurrenceJSON);
   });
 });
 
-// TODO: storing data as JSON format
+// HOW TO SAVE THE OBJECT
