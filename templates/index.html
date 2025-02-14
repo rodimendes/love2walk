@@ -2,7 +2,7 @@
 
       <section class="container">
         <article class="content">
-          <form action="/sendData" method="post" id="userForm">
+          <form action="/sendData" method="post" id="userForm" enctype="multipart/form-data">
             <div class="question">
               <label class="title">Type of issue:</label>
               <select
@@ -43,17 +43,13 @@
             </div>
             <div class="question">
               <label class="title">Take or browse a picture:</label>
-              <input type="file" accept="image/*" class="get-image" />
+              <input type="file" accept="image/*" class="get-image" name="user-file"/>
             </div>
             <div class="question">
               <label class="title">If you are at the place, click here:</label>
               <button id="geoCoordsBtn">Send with coordinates</button>
               <!-- <p id="coordsDisplay"></p> -->
             </div>
-            <!-- <div class="question">
-              <button type="submit" id="submitButton">
-                Send without coordinates
-              </button> -->
             </div>
           </form>
         </article>

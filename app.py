@@ -1,7 +1,6 @@
-# TODO: Armazenar os dados recolhidos em JSON
-
 import json
 from flask import Flask, render_template, request, jsonify
+import datetime
 
 app = Flask(__name__)
 
@@ -34,16 +33,19 @@ def receive_data():
     """Recebe os dados do formulário e armazena no dicionário temporário."""
     global current_entry
     data = request.form
+    images = request.files['user-file']
+    images.save(images.filename)
     current_entry['issue'] = data['issue']
     current_entry['gravity'] = data['gravity']
     current_entry['quick_intervention'] = data.get('quick-intervention', False)
+    current_entry['date_time'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     # Se já temos latitude e longitude, salvamos os dados no JSON
     if 'latitude' in current_entry and 'longitude' in current_entry:
         save_data()
     
     print(f"Received data: {current_entry}")
-    return render_template("/success.html")
+    return render_template("/success.html", name=images.filename)
 
 @app.route('/sendLocation', methods=['POST'])
 def receive_location():
