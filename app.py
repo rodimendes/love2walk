@@ -1,8 +1,12 @@
 import json
 from flask import Flask, render_template, request, jsonify
 import datetime
+import os
+from werkzeug.utils import secure_filename
 
+UPLOAD_FOLDER = '/Users/rodimendes/Documents/my_projects/love2walk_python/images'
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 JSON_FILE_PATH = 'data.json'
 current_entry = {}  # Armazena temporariamente os dados antes de salvar
@@ -33,19 +37,22 @@ def receive_data():
     """Recebe os dados do formulário e armazena no dicionário temporário."""
     global current_entry
     data = request.form
-    images = request.files['user-file']
-    images.save(images.filename)
+    image = request.files['user-file']
+    if image:
+        filename = secure_filename(image.filename)
+        image.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
     current_entry['issue'] = data['issue']
     current_entry['gravity'] = data['gravity']
     current_entry['quick_intervention'] = data.get('quick-intervention', False)
     current_entry['date_time'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    current_entry['filepath'] = os.path.join(app.config['UPLOAD_FOLDER'], filename)
 
     # Se já temos latitude e longitude, salvamos os dados no JSON
     if 'latitude' in current_entry and 'longitude' in current_entry:
         save_data()
     
     print(f"Received data: {current_entry}")
-    return render_template("/success.html", name=images.filename)
+    return render_template("/success.html", name=image.filename)
 
 @app.route('/sendLocation', methods=['POST'])
 def receive_location():
